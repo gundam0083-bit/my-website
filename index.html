@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ガンダムミニフィギュアセレクション 図鑑</title>
+    <style>
+        body {
+            background-image: url('IMG_1924.jpeg'); /* 新しい背景画像を設定 */
+            background-size: cover; /* 画像全体が表示されるように調整 */
+            background-position: center; /* 中央に配置 */
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: #FFFFFF;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: rgba(0, 51, 102, 0.8); 
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #CC0000;
+        }
+        .section-title {
+            color: #FFDD00;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .figure-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .figure-item {
+            text-align: center;
+            width: 150px;
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.6); /* サムネイルの背景に半透明の黒を追加 */
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid #FFDD00; /* サムネイルの周りに黄色い枠線を追加 */
+        }
+        .figure-item img {
+            width: 100px; /* 画像の幅を統一 */
+            height: 100px; /* 画像の高さを統一 */
+            object-fit: contain; /* アスペクト比を維持しつつ、画像がサイズに収まるよう調整 */
+            cursor: pointer;
+        }
+        .figure-item p {
+            color: #FFDD00;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: calc(16px - 0.5vw); /* 名前の長さに応じてフォントサイズを調整 */
+            text-shadow: 2px 2px 4px #000000; /* 名前に影をつけて見栄えを改善 */
+            white-space: nowrap; /* 改行を防止 */
+            overflow: hidden; /* テキストが枠を超えた場合に隠す */
+            text-overflow: ellipsis; /* テキストが枠を超えた場合に "..." を表示 */
+        }
+        .popup {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            z-index: 10;
+        }
+        .popup img {
+            width: 300px;
+            height: auto;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function showPopup(index) {
+            const popups = document.querySelectorAll('.popup');
+            popups.forEach(popup => {
+                popup.style.display = 'none';
+            });
+            document.getElementById(`popup-${index}`).style.display = 'block';
+        }
+
+        function hidePopup(popupId) {
+            document.getElementById(popupId).style.display = 'none';
+        }
+
+        function loadFigures() {
+            const figures = [
+                { name: "フルアーマーガンダム", front: "IMG_1327.JPG" },
+                { name: "G3ガンダム", front: "IMG_0980.JPG", back: "IMG_0981.JPG" },
+                { name: "ジムスナイパーカスタム", front: "IMG_0403.JPG", back: "IMG_0991.JPG" }
+            ];
+
+            const container = document.getElementById('figure-container');
+
+            figures.forEach((figure, index) => {
+                let figureItem = document.createElement('div');
+                figureItem.className = 'figure-item';
+
+                let img = document.createElement('img');
+                img.src = figure.front;
+                img.alt = `${figure.name} サムネイル`;
+                img.onclick = () => showPopup(index);
+                figureItem.appendChild(img);
+
+                let name = document.createElement('p');
+                name.textContent = figure.name;
+                figureItem.appendChild(name);
+
+                let popup = document.createElement('div');
+                popup.className = 'popup';
+                popup.id = `popup-${index}`;
+
+                let popupImgFront = document.createElement('img');
+                popupImgFront.src = figure.front;
+                popupImgFront.alt = `${figure.name} (正面)`;
+                popupImgFront.onclick = () => hidePopup(popup.id);  // シングルクリックで閉じる
+                popup.appendChild(popupImgFront);
+
+                if (figure.back) {
+                    let popupImgBack = document.createElement('img');
+                    popupImgBack.src = figure.back;
+                    popupImgBack.alt = `${figure.name} (背面)`;
+                    popupImgBack.onclick = () => hidePopup(popup.id);  // シングルクリックで閉じる
+                    popup.appendChild(popupImgBack);
+                }
+
+                figureItem.appendChild(popup);
+                container.appendChild(figureItem);
+            });
+        }
+
+        window.onload = loadFigures;
+    </script>
+</head>
+<body>
+    <header>
+        <h1>ガンダムミニフィギュアセレクション 図鑑</h1>
+    </header>
+
+    <section>
+        <h2 class="section-title">第1弾</h2>
+        <div id="figure-container" class="figure-container">
+            <!-- JavaScriptでフィギュアが自動生成されます -->
+        </div>
+    </section>
+</body>
+</html>
