@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ガンダムミニフィギュアセレクション 図鑑</title>
+    <style>
+        body {
+            background-image: url('IMG_1924.jpeg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: #FFFFFF;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1, h2 {
+            color: #FFDD00;
+            margin-top: 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .gallery-item {
+            width: 150px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid #FFDD00;
+        }
+        .gallery-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            cursor: pointer;
+        }
+        .gallery-item p {
+            margin-top: 10px;
+            font-size: 16px;
+            text-shadow: 2px 2px 4px #000000;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 10px;
+            border-radius: 10px;
+            z-index: 10;
+            text-align: center;
+        }
+        .popup img {
+            width: 300px;
+            height: auto;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function showPopup(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function hidePopup(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <h1>ガンダムミニフィギュアセレクション 図鑑</h1>
+
+    <!-- 第1弾 -->
+    <h2>第1弾</h2>
+    <div class="gallery">  
+        <div class="gallery-item">
+            <img src="第1弾.jpg" alt="第1弾" onclick="showPopup('popup0')">
+            <p>0. 第一弾表紙</p>
+        </div>
+        <div class="gallery-item">
+            <img src="IMG_4360.jpeg" alt="ガンダム" onclick="showPopup('popup1')">
+            <p>1. ガンダム</p>
+        </div>
+        <div class="gallery-item">
+            <img src="IMG_4362.jpeg" alt="ガンキャノン" onclick="showPopup('popup2')">
+            <p>2. ガンキャノン</p>
+        </div>
+        <div class="gallery-item">
+            <img src="IMG_4364.jpeg" alt="ガンタンク" onclick="showPopup('popup3')">
+            <p>3. ガンタンク</p>
+        </div>
+        <div class="gallery-item">
+            <img src="IMG_4366.jpeg" alt="ザクⅡ" onclick="showPopup('popup4')">
+            <p>4. ザクⅡ</p>
+        </div>
+        <div class="gallery-item">
+            <img src="IMG_4368.jpeg" alt="シャア専用ザク" onclick="showPopup('popup5')">
+            <p>5. シャア専用ザク</p>
+        </div>
+        <div class="gallery-item">
+            <img src="IMG_4370.jpeg" alt="グフ" onclick="showPopup('popup6')">
+            <p>6. グフ</p>
+        </div>
+        <div class="gallery-item">
+            <img src="IMG_4372.jpeg" alt="ドム" onclick="showPopup('popup7')">
+            <p>7. ドム</p>
+        </div>
+        <div class="gallery-item">
+            <img src="IMG_4374.jpeg" alt="ズゴック" onclick="showPopup('popup8')">
+            <p>8. ズゴック</p>
+        </div>
+        <div class="gallery-item">
+            <img src="IMG_4376.jpeg" alt="ゲルググ" onclick="showPopup('popup9')">
+            <p>9. ゲルググ</p>
+        </div>
+        <div class="gallery-item">
+            <img src="IMG_4379.jpeg" alt="ジオング" onclick="showPopup('popup10')">
+            <p>10. ジオング</p>
+        </div>
+        <div class="gallery-item">
+            <img src="IMG_4381.jpeg" alt="スーパーガンダム" onclick="showPopup('popup11')">
+            <p>11. スーパーガンダム</p>
+        </div>
+        <div class="gallery-item">
+            <img src="IMG_4383 2.jpeg" alt="Zガンダム" onclick="showPopup('popup12')">
+            <p>12. Zガンダム</p>
+        </div>
+        <div class="gallery-item">
+            <img src="IMG_4385 2.jpeg" alt="ジ・O" onclick="showPopup('popup13')">
+            <p>13. ジ・O</p>
+        </div>
+        <div class="gallery-item">
+            <img src="IMG_4387 2.jpeg" alt="百式" onclick="showPopup('popup14')">
+            <p>14. 百式</p>
+        </div>
+        <div class="gallery-item">
+            <img src="IMG_4389 2.jpeg" alt="キュベレイ" onclick="showPopup('popup15')">
+            <p>15. キュベレイ</p>
+        </div>
+        <div class="gallery-item">
+            <img src="IMG_4391 2.jpeg" alt="G-3ガンダム" onclick="showPopup('popup16')">
+            <p>16. G-3ガンダム</p>
+        </div>
+        <div class="gallery-item">
+            <img src="IMG_4393.jpeg" alt="パーフェクトガンダム" onclick="showPopup('popup17')">
+            <p>17. パーフェクトガンダム</p>
+        </div>
+    </div>
+    </div>
+
+    <!-- 第2弾 -->
+    <h2>第2弾</h2>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="第2弾.jpg" alt="第2弾表紙" onclick="showPopup('popup18')">
+            <p>18. 第二弾表紙</p>
+        </div>
+    </div>
+    <!-- ポップアップのセクション -->
+    <div id="popup0" class="popup" onclick="hidePopup('popup0')">
+        <img src="第1弾.jpg" alt="第一弾">
+        <img src="20942etc.jpg" alt="第一弾背面">
+    </div>
+    <div id="popup1" class="popup" onclick="hidePopup('popup1')">
+        <img src="IMG_4360.jpeg" alt="ガンダム">
+        <img src="IMG_4361.jpeg" alt="ガンダム背面">
+    </div>
+    <div id="popup2" class="popup" onclick="hidePopup('popup2')">
+        <img src="IMG_4362.jpeg" alt="ガンキャノン">
+        <img src="IMG_4363.jpeg" alt="ガンキャノン背面">
+    </div>
+    <div id="popup3" class="popup" onclick="hidePopup('popup3')">
+        <img src="IMG_4364.jpeg" alt="ガンタンク">
+        <img src="IMG_4365.jpeg" alt="ガンタンク背面">
+    </div>
+    <div id="popup4" class="popup" onclick="hidePopup('popup4')">
+        <img src="IMG_4366.jpeg" alt="ザクⅡ">
+        <img src="IMG_4367.jpeg" alt="ザクⅡ背面">
+    </div>
+    <div id="popup5" class="popup" onclick="hidePopup('popup5')">
+        <img src="IMG_4368.jpeg" alt="シャア専用ザク">
+        <img src="IMG_4369.jpeg" alt="シャア専用ザク背面">
+    </div>
+    <div id="popup6" class="popup" onclick="hidePopup('popup6')">
+        <img src="IMG_4370.jpeg" alt="グフ">
+        <img src="IMG_4371.jpeg" alt="グフ背面">
+    </div>
+    <div id="popup7" class="popup" onclick="hidePopup('popup7')">
+        <img src="IMG_4372.jpeg" alt="ドム">
+        <img src="IMG_4373.jpeg" alt="ドム背面">
+    </div>
+    <div id="popup8" class="popup" onclick="hidePopup('popup8')">
+        <img src="IMG_4374.jpeg" alt="ズゴック">
+        <img src="IMG_4375.jpeg" alt="ズゴック背面">
+    </div>
+    <div id="popup9" class="popup" onclick="hidePopup('popup9')">
+        <img src="IMG_4376.jpeg" alt="ゲルググ">
+        <img src="IMG_4378.jpeg" alt="ゲルググ背面">
+    </div>
+    <div id="popup10" class="popup" onclick="hidePopup('popup10')">
+        <img src="IMG_4379.jpeg" alt="ジオング">
+        <img src="IMG_4380.jpeg" alt="ジオング背面">
+    </div>
+    <div id="popup11" class="popup" onclick="hidePopup('popup11')">
+        <img src="IMG_4381.jpeg" alt="スーパーガンダム">
+        <img src="IMG_4382 2.jpeg" alt="スーパーガンダム背面">
+    </div>
+
+    <div id="popup12" class="popup" onclick="hidePopup('popup12')">
+        <img src="IMG_4383 2.jpeg" alt="Zガンダム">
+        <img src="IMG_4384 2.jpeg" alt="Zガンダム背面">
+    </div>
+    <div id="popup13" class="popup" onclick="hidePopup('popup13')">
+        <img src="IMG_4385 2.jpeg" alt="ジ・O">
+        <img src="IMG_4386 2.jpeg" alt="ジ・O背面">
+    </div>
+    <div id="popup14" class="popup" onclick="hidePopup('popup14')">
+        <img src="IMG_4387 2.jpeg" alt="百式">
+        <img src="IMG_4388 2.jpeg" alt="百式背面">
+    </div>
+    <div id="popup15" class="popup" onclick="hidePopup('popup15')">
+        <img src="IMG_4389 2.jpeg" alt="キュベレイ">
+        <img src="IMG_4390 2.jpeg" alt="キュベレイ背面">
+    </div>
+    <div id="popup16" class="popup" onclick="hidePopup('popup16')">
+        <img src="IMG_4391 2.jpeg" alt="G-3ガンダム">
+        <img src="IMG_4392 2.jpeg" alt="G-3ガンダム背面">
+    </div>
+    <div id="popup17" class="popup" onclick="hidePopup('popup17')">
+        <img src="IMG_4393.jpeg" alt="パーフェクトガンダム">
+        <img src="IMG_4394.jpeg" alt="パーフェクトガンダム背面">
+    </div>
+    <div id="popup18" class="popup" onclick="hidePopup('popup18')">
+        <img src="第2弾.jpg" alt="第2弾表紙">
+        <img src="04018etc2.jpg" alt="第2弾背面">
+    </div>
+</body>
+</html>
